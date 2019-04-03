@@ -41,35 +41,75 @@ let phones = [{
 
 console.dir(phones);
 /***Write code after this line***/
-
-var x = ' <li class="list-group-item d-flex justify-content-between align-items-center"><h5> '
-var y = ' </h5>'
-var z = ' <span class="badge badge-primary badge-pill">'
-var a = ' </span>'
-
-function myFunctionFall(){
-for (var i = 0; i < phones.length; i++) {
-    var h = document.getElementById("div1");
-    h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $" + a);
-}
-
 for (var i = 0; i < phones.length; i++) {
     phones[i].price = +phones[i].price.slice(0, -2);
 }
 
 
-phones.sort(function (a, b) {
-    return a.price - b.price
-});
 
 var x = ' <li class="list-group-item d-flex justify-content-between align-items-center"><h5> '
 var y = ' </h5>'
 var z = ' <span class="badge badge-primary badge-pill">'
 var a = ' </span>'
+var b = ' </li> '
+var h = document.getElementById("div1");
+displayPhones();
 
 
-for (var i = 0; i < phones.length; i++) {
-    var h = document.getElementById("div1");
-    h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $" + a);
+
+function myFunctionFall() {
+
+    var r1 = document.getElementsByTagName("li");
+    for (var i = r1.length - 1; i >= 0; --i) {
+        r1[i].remove();
+      }
+
+
+    phones.sort(function (a, b) {
+        return a.price - b.price
+    });
+
+
+    for (var i = 0; i < phones.length; i++) {
+
+        h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $" + a + b);
+    }
+    
+    console.dir(phones);
 }
+
+function myFunctionGrow() {
+    var r1 = document.getElementsByTagName("li");
+    for (var i = r1.length - 1; i >= 0; --i) {
+        r1[i].remove();
+      }
+
+    phones.sort(function (a, b) {
+        return b.price - a.price
+    });
+
+
+    for (var i = 0; i < phones.length; i++) {
+        var h = document.getElementById("div1");
+        h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $" + a + b);
+    }
+    
+    console.dir(phones);
+}
+
+function displayPhones() {
+    for (var i = 0; i < phones.length; i++) {
+        var h = document.getElementById("div1");
+        h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $ " + a + b);
+    }
+}
+
+function myFunction() {
+    
+    var r1 = document.getElementsByTagName("li");
+    for (var i = r1.length - 1; i >= 0; --i) {
+        r1[i].remove();
+      }
+    
+
 }
