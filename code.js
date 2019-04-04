@@ -59,10 +59,7 @@ displayPhones();
 
 function myFunctionFall() {
 
-    var r1 = document.getElementsByTagName("li");
-    for (var i = r1.length - 1; i >= 0; --i) {
-        r1[i].remove();
-      }
+    removePhones()
 
 
     phones.sort(function (a, b) {
@@ -79,10 +76,7 @@ function myFunctionFall() {
 }
 
 function myFunctionGrow() {
-    var r1 = document.getElementsByTagName("li");
-    for (var i = r1.length - 1; i >= 0; --i) {
-        r1[i].remove();
-      }
+    removePhones()
 
     phones.sort(function (a, b) {
         return b.price - a.price
@@ -104,7 +98,7 @@ function displayPhones() {
     }
 }
 
-function myFunction() {
+function removePhones() {
     
     var r1 = document.getElementsByTagName("li");
     for (var i = r1.length - 1; i >= 0; --i) {
