@@ -71,11 +71,12 @@ function myFunctionFall() {
 
         h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $" + a + b);
     }
-    
+
     console.dir(phones);
 }
 
 function myFunctionGrow() {
+    
     removePhones()
 
     phones.sort(function (a, b) {
@@ -87,7 +88,7 @@ function myFunctionGrow() {
         var h = document.getElementById("div1");
         h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $" + a + b);
     }
-    
+
     console.dir(phones);
 }
 
@@ -99,11 +100,11 @@ function displayPhones() {
 }
 
 function removePhones() {
-    
+
     var r1 = document.getElementsByTagName("li");
     for (var i = r1.length - 1; i >= 0; --i) {
         r1[i].remove();
-      }
-    
+    }
+
 
 }
