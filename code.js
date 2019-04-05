@@ -53,6 +53,8 @@ var z = ' <span class="badge badge-primary badge-pill">'
 var a = ' </span>'
 var b = ' </li> '
 var h = document.getElementById("div1");
+var button = document.getElementsByTagName("button");
+console.log(button);
 displayPhones();
 
 
@@ -60,6 +62,11 @@ displayPhones();
 function myFunctionFall() {
 
     removePhones()
+
+    button[1].style.background = "green";
+    button[1].style.color = "white";
+    button[0].style.background = "#f9f9f9";
+    button[0].style.color = "black";
 
 
     phones.sort(function (a, b) {
@@ -78,6 +85,12 @@ function myFunctionFall() {
 function myFunctionGrow() {
     
     removePhones()
+
+    button[0].style.background = "green";
+    button[0].style.color = "white";
+    button[1].style.background = "#f9f9f9";
+    button[1].style.color = "black";
+    console.log(button);
 
     phones.sort(function (a, b) {
         return b.price - a.price
