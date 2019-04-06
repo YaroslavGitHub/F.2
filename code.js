@@ -47,12 +47,8 @@ for (var i = 0; i < phones.length; i++) {
 
 
 
-var x = ' <li class="list-group-item d-flex justify-content-between align-items-center"><h5> '
-var y = ' </h5>'
-var z = ' <span class="badge badge-primary badge-pill">'
-var a = ' </span>'
-var b = ' </li> '
-var h = document.getElementById("div1");
+const h = document.getElementById("div1");
+
 var button = document.getElementsByTagName("button");
 console.log(button);
 displayPhones();
@@ -76,7 +72,7 @@ function myFunctionFall() {
 
     for (var i = 0; i < phones.length; i++) {
 
-        h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $" + a + b);
+        h.insertAdjacentHTML("afterend", ` <li class="list-group-item d-flex justify-content-between align-items-center"><h5> ${phones[i].title}  </h5> <span class="badge badge-primary badge-pill"> ${phones[i].price} $ </span> </li> `)
     }
 
     console.dir(phones);
@@ -99,7 +95,7 @@ function myFunctionGrow() {
 
     for (var i = 0; i < phones.length; i++) {
         var h = document.getElementById("div1");
-        h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $" + a + b);
+        h.insertAdjacentHTML("afterend", ` <li class="list-group-item d-flex justify-content-between align-items-center"><h5> ${phones[i].title}  </h5> <span class="badge badge-primary badge-pill"> ${phones[i].price} $ </span> </li> ` );
     }
 
     console.dir(phones);
@@ -107,13 +103,13 @@ function myFunctionGrow() {
 
 function displayPhones() {
     for (var i = 0; i < phones.length; i++) {
-        var h = document.getElementById("div1");
-        h.insertAdjacentHTML("afterend", x + phones[i].title + y + z + phones[i].price + " $ " + a + b);
+        var h1 = ` <li class="list-group-item d-flex justify-content-between align-items-center"><h5> ${phones[i].title} </h5> <span class="badge badge-primary badge-pill"> ${phones[i].price} $ </span> </li> `;
+        h.insertAdjacentHTML("afterend", `${h1}`);
     }
 }
 
 function removePhones() {
-
+    
     var r1 = document.getElementsByTagName("li");
     for (var i = r1.length - 1; i >= 0; --i) {
         r1[i].remove();
